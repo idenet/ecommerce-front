@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@lagunovsky/redux-react-router': ^2.2.0
   '@testing-library/jest-dom': ^5.11.4
   '@testing-library/react': ^11.1.0
   '@testing-library/user-event': ^12.1.10
@@ -12,12 +13,12 @@ specifiers:
   '@types/react-router-dom': ^5.3.2
   antd: ^4.17.1
   axios: ^0.24.0
-  connected-react-router: ^6.9.1
+  history: '5'
   moment: ^2.29.1
   react: ^17.0.2
   react-dom: ^17.0.2
   react-redux: ^7.2.6
-  react-router-dom: ^6.0.2
+  react-router-dom: '6'
   react-scripts: 4.0.3
   redux: ^4.1.2
   redux-devtools-extension: ^2.13.9
@@ -26,6 +27,7 @@ specifiers:
   web-vitals: ^1.0.1
 
 dependencies:
+  '@lagunovsky/redux-react-router': 2.2.0_ae0bce6b04fd427787d96c9b7b51dc31
   '@testing-library/jest-dom': 5.15.1
   '@testing-library/react': 11.2.7_react-dom@17.0.2+react@17.0.2
   '@testing-library/user-event': 12.8.3
@@ -37,7 +39,7 @@ dependencies:
   '@types/react-router-dom': 5.3.2
   antd: 4.17.1_react-dom@17.0.2+react@17.0.2
   axios: 0.24.0
-  connected-react-router: 6.9.1_34362ad81a919891909cf289bf01b934
+  history: 5.1.0
   moment: 2.29.1
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -1543,7 +1545,7 @@ packages:
     dev: false
 
   /@babel/runtime/7.16.3:
-    resolution: {integrity: sha512-WBwekcqacdY2e9AF/Q7WLFUWmdJGJTkbjqTjoMDgXkVZ3ZRUvOPsLb5KdwISoQVsbP+DQzVZW4Zhci0DvpbNTQ==, tarball: '@babel/runtime/download/@babel/runtime-7.16.3.tgz'}
+    resolution: {integrity: sha512-WBwekcqacdY2e9AF/Q7WLFUWmdJGJTkbjqTjoMDgXkVZ3ZRUvOPsLb5KdwISoQVsbP+DQzVZW4Zhci0DvpbNTQ==, tarball: '@babel/runtime/download/@babel/runtime-7.16.3.tgz?cache=0&sync_timestamp=1636501703701&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.16.3.tgz'}
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.9
@@ -1879,6 +1881,23 @@ packages:
       '@types/node': 12.20.37
       '@types/yargs': 15.0.14
       chalk: 4.1.2
+    dev: false
+
+  /@lagunovsky/redux-react-router/2.2.0_ae0bce6b04fd427787d96c9b7b51dc31:
+    resolution: {integrity: sha512-37fkKOdLAzJF6b8wyFwwxzGOwAE1o7F5qb2q06a3xq3Y0INdfuak9nWEPqd1G9RsLvX4ZYH2Oin/7eLwLXspoA==, tarball: '@lagunovsky/redux-react-router/download/@lagunovsky/redux-react-router-2.2.0.tgz'}
+    peerDependencies:
+      history: ^5
+      react: ^16.8 || ^17 || ^18
+      react-dom: ^16.8 || ^17 || ^18
+      react-redux: ^6 || ^7
+      react-router: ^6
+      redux: ^4
+    dependencies:
+      history: 5.1.0
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      react-redux: 7.2.6_react-dom@17.0.2+react@17.0.2
+      redux: 4.1.2
     dev: false
 
   /@nodelib/fs.scandir/2.1.5:
@@ -4076,25 +4095,6 @@ packages:
   /connect-history-api-fallback/1.6.0:
     resolution: {integrity: sha1-izIIk1kwjRERFdgcrT/Oq4iPl7w=, tarball: connect-history-api-fallback/download/connect-history-api-fallback-1.6.0.tgz}
     engines: {node: '>=0.8'}
-    dev: false
-
-  /connected-react-router/6.9.1_34362ad81a919891909cf289bf01b934:
-    resolution: {integrity: sha1-2ELuuqFbmSDi5F/APXTkERDpTkw=, tarball: connected-react-router/download/connected-react-router-6.9.1.tgz}
-    peerDependencies:
-      history: ^4.7.2
-      react: ^16.4.0 || ^17.0.0
-      react-redux: ^6.0.0 || ^7.1.0
-      react-router: ^4.3.1 || ^5.0.0
-      redux: ^3.6.0 || ^4.0.0
-    dependencies:
-      lodash.isequalwith: 4.4.0
-      prop-types: 15.7.2
-      react: 17.0.2
-      react-redux: 7.2.6_react-dom@17.0.2+react@17.0.2
-      redux: 4.1.2
-    optionalDependencies:
-      immutable: 4.0.0
-      seamless-immutable: 7.1.4
     dev: false
 
   /console-browserify/1.2.0:
@@ -6375,12 +6375,6 @@ packages:
     resolution: {integrity: sha1-nHPbaD4rOXXEJPsFcq9YiYd65lY=, tarball: immer/download/immer-8.0.1.tgz}
     dev: false
 
-  /immutable/4.0.0:
-    resolution: {integrity: sha1-uG943mre82CDle+yaakUYnl+LCM=, tarball: immutable/download/immutable-4.0.0.tgz}
-    requiresBuild: true
-    dev: false
-    optional: true
-
   /import-cwd/2.1.0:
     resolution: {integrity: sha1-qmzzbnInYShcs3HsZRn1PiQ1sKk=, tarball: import-cwd/download/import-cwd-2.1.0.tgz}
     engines: {node: '>=4'}
@@ -7729,10 +7723,6 @@ packages:
 
   /lodash.debounce/4.0.8:
     resolution: {integrity: sha1-gteb/zCmfEAF/9XiUVMArZyk168=, tarball: lodash.debounce/download/lodash.debounce-4.0.8.tgz}
-    dev: false
-
-  /lodash.isequalwith/4.4.0:
-    resolution: {integrity: sha1-Jmcm3dUo+FTyH06pigZWBuD7xrA=, tarball: lodash.isequalwith/download/lodash.isequalwith-4.4.0.tgz}
     dev: false
 
   /lodash.memoize/4.1.2:
@@ -10910,12 +10900,6 @@ packages:
     dependencies:
       compute-scroll-into-view: 1.0.17
     dev: false
-
-  /seamless-immutable/7.1.4:
-    resolution: {integrity: sha1-bpU23vCD3cTeoCB9ci4OgNDzcvg=, tarball: seamless-immutable/download/seamless-immutable-7.1.4.tgz}
-    requiresBuild: true
-    dev: false
-    optional: true
 
   /select-hose/2.0.0:
     resolution: {integrity: sha1-Yl2GWPhlr0Psliv8N2o3NZpJlMo=, tarball: select-hose/download/select-hose-2.0.0.tgz}
