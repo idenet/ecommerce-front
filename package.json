@@ -38,7 +38,17 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "react",
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "react/self-closing-comp": [
+        "error"
+      ]
+    }
   },
   "browserslist": {
     "production": [

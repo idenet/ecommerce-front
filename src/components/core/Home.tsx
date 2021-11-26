@@ -1,13 +1,14 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
-import Layout from './Layout';
+import { useSelector } from 'react-redux'
+import Layout from './Layout'
 
 const Home = () => {
-
-  const state = useSelector(state => state)
+  const state = useSelector((state) => state)
 
   return (
-    <Layout>Home {JSON.stringify(state)}</Layout>
+    <Layout title="拉钩商城" subTitle="尽情享受吧">
+      Home {JSON.stringify(state)}
+    </Layout>
   )
 }
 

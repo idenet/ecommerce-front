@@ -1,15 +1,19 @@
 import { combineReducers } from 'redux'
-import testReducer from './test.reduce';
-import { createRouterReducer, ReduxRouterState } from '@lagunovsky/redux-react-router'
-import { browserHistory } from '../history';
+import {
+  createRouterReducer,
+  ReduxRouterState,
+} from '@lagunovsky/redux-react-router'
+import { browserHistory } from '../history'
+import authReducer, { AuthState } from './auth.reducer'
 
 export interface AppState {
   router: ReduxRouterState
+  auth: AuthState
 }
 
 const createRootReducer = combineReducers({
-  test: testReducer,
-  router: createRouterReducer(browserHistory)
+  auth: authReducer,
+  router: createRouterReducer(browserHistory),
 })
 
 export default createRootReducer
