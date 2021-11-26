@@ -10,9 +10,9 @@ import { API } from './../../config'
 
 function* handleSignup(action: SignupAction) {
   try {
-    let response = yield axios.post(`${API}/signup`, action.payload)
+    yield axios.post(`${API}/signup`, action.payload)
     yield put(signupSuccess())
-  } catch (error) {
+  } catch (error: any) {
     yield put(signupFail(error.response.data.error))
   }
 }

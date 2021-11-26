@@ -2,7 +2,7 @@ import { Button, Form, Input } from 'antd'
 import React from 'react'
 import Layout from './Layout'
 
-function signin() {
+function Signin() {
   return (
     <Layout title="登录" subTitle="">
       <Form>
@@ -22,4 +22,4 @@ function signin() {
   )
 }
 
-export default signin
+export default Signin

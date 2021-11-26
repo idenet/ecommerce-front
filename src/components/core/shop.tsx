@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from './Layout'
 
-const shop = () => {
+const Shop = () => {
   return (
     <Layout title="拉钩商城" subTitle="挑选你喜欢的商品吧">
       Shop
@@ -9,4 +9,4 @@ const shop = () => {
   )
 }
 
-export default shop
+export default Shop
