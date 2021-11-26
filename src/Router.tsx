@@ -6,8 +6,8 @@ import Shop from './components/core/shop';
 const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />}></Route>
-      <Route path="/shop" element={<Shop />}></Route>
+      <Route path="/" element={<Home />} />
+      <Route path="/shop" element={<Shop />} />
     </Routes>
   )
 }
