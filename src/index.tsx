@@ -3,16 +3,16 @@ import ReactDOM from 'react-dom';
 // import App from './App';
 import { API } from './config';
 import Router from './Router';
-import {Provider} from 'react-redux'
+import { Provider } from 'react-redux'
 import store from './store/index';
+import { browserHistory } from './store/history';
+
 import { ReduxRouter } from '@lagunovsky/redux-react-router'
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ReduxRouter history={ history }>
-      <Router />
-      </ReduxRouter>
+      <ReduxRouter store={store} history={browserHistory} children={<Router />} />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
