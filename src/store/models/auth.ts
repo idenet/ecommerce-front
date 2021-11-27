@@ -1,7 +1,7 @@
 export interface User {
   _id: string
   name: string
-  emial: string
+  email: string
   role: number
 }
 

@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@ant-design/icons': ^4.7.0
   '@lagunovsky/redux-react-router': ^2.2.0
   '@testing-library/jest-dom': ^5.11.4
   '@testing-library/react': ^11.1.0
@@ -27,6 +28,7 @@ specifiers:
   web-vitals: ^1.0.1
 
 dependencies:
+  '@ant-design/icons': 4.7.0_react-dom@17.0.2+react@17.0.2
   '@lagunovsky/redux-react-router': 2.2.0_ae0bce6b04fd427787d96c9b7b51dc31
   '@testing-library/jest-dom': 5.15.1
   '@testing-library/react': 11.2.7_react-dom@17.0.2+react@17.0.2
@@ -10148,7 +10150,7 @@ packages:
     dev: false
 
   /rc-util/5.15.0_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-8RI8sjOCXD3FhD3dzQNBQetpGol6BBd3sHQ/8jSGk9NPT0CH3JGtBfPODnASyE7AdDpCFQMOmgcp9CBs3S/1hg==, tarball: rc-util/download/rc-util-5.15.0.tgz}
+    resolution: {integrity: sha512-8RI8sjOCXD3FhD3dzQNBQetpGol6BBd3sHQ/8jSGk9NPT0CH3JGtBfPODnASyE7AdDpCFQMOmgcp9CBs3S/1hg==, tarball: rc-util/download/rc-util-5.15.0.tgz?cache=0&sync_timestamp=1636531528658&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Frc-util%2Fdownload%2Frc-util-5.15.0.tgz}
     peerDependencies:
       react: '>=16.9.0'
       react-dom: '>=16.9.0'

@@ -1,7 +1,7 @@
 import { Button, Form, Input, Result } from 'antd'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import { signin, SigninPayload } from '../../store/actions/auth.action'
 import { Jwt } from '../../store/models/auth'
 import { AppState } from '../../store/reducers'
@@ -12,7 +12,6 @@ import Layout from './Layout'
 function Signin() {
   // hooks
   const dispatch = useDispatch()
-  const navigate = useNavigate()
 
   const onFinish = (value: SigninPayload) => {
     dispatch(signin(value))
@@ -42,10 +41,10 @@ function Signin() {
 
       if (role === 0) {
         // 注册用户
-        navigate('/user/dashboard', { replace: true })
+        return <Navigate to="/user/dashboard" replace={true} />
       } else {
         // 管理员
-        navigate('/admin/dashboard', { replace: true })
+        return <Navigate to="/admin/dashboard" replace={true} />
       }
     }
   }
