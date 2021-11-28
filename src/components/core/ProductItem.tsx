@@ -1,7 +1,10 @@
+import { push } from '@lagunovsky/redux-react-router'
 import { Button, Card, Col, Image, Row, Typography } from 'antd'
 import moment from 'moment'
 import React, { FC } from 'react'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { addItem } from '../../helpers/cart'
 import { Product } from '../../store/models/product'
 import { API } from './../../config'
 
@@ -18,6 +21,14 @@ const ProductItem: FC<Props> = ({
   showVieweProduct = true,
   showCartButton = true,
 }) => {
+  const dispatch = useDispatch()
+
+  const addToCart = () => {
+    addItem(product, () => {
+      dispatch(push('/cart'))
+    })
+  }
+
   const showButtons = () => {
     let buttonArray = []
     if (showVieweProduct) {
@@ -29,8 +40,8 @@ const ProductItem: FC<Props> = ({
     }
     if (showCartButton) {
       buttonArray.push(
-        <Button type="link">
-          <Link to="">加入购物车</Link>
+        <Button type="link" onClick={addToCart}>
+          加入购物车
         </Button>
       )
     }
