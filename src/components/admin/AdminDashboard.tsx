@@ -33,7 +33,7 @@ const AdminDashboard = () => {
           </Menu.Item>
           <Menu.Item key="orderlist">
             <OrderedListOutlined />
-            <Link to="">订单列表</Link>
+            <Link to="/admin/orders">订单列表</Link>
           </Menu.Item>
         </Menu>
       </>

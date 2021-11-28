@@ -5,6 +5,7 @@ import { Jwt } from '../../store/models/auth'
 import AddCategory from './AddCategory'
 import AddProduct from './AddProduct'
 import AdminDashboard from './AdminDashboard'
+import Orders from './Orders'
 
 const AdminRoutes = () => {
   const auth = isAuth()
@@ -21,6 +22,8 @@ const AdminRoutes = () => {
           return <AddCategory />
         case '/create/product':
           return <AddProduct />
+        case '/admin/orders':
+          return <Orders />
       }
     }
   }

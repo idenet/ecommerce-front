@@ -1,9 +1,11 @@
 import { ReduxRouterState } from '@lagunovsky/redux-react-router'
-import { Menu } from 'antd'
-import React from 'react'
+import { Badge, Menu } from 'antd'
+import React, { useContext, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { TotalContext } from '../../AnotherStore'
 import { isAuth } from '../../helpers/auth'
+import { itemCount } from '../../helpers/cart'
 import { Jwt } from '../../store/models/auth'
 import { AppState } from '../../store/reducers/index'
 
@@ -16,12 +18,19 @@ const Navigations = () => {
     (state) => state.router
   )
 
+  const [count, setCount] = useContext(TotalContext)
+
+  useEffect(() => {
+    setCount(itemCount())
+  }, [count, setCount])
+
   const pathname = router.location.pathname
 
   const isHome = useActive(pathname, '/')
   const isShop = useActive(pathname, '/shop')
   const isSignin = useActive(pathname, '/signin')
   const isSignup = useActive(pathname, '/signup')
+  const isCart = useActive(pathname, '/cart')
   const isDashboard = useActive(pathname, getDashboardUrl())
 
   function getDashboardUrl() {
@@ -45,6 +54,12 @@ const Navigations = () => {
       </Menu.Item>
       <Menu.Item className={isShop} key="shop">
         <Link to="/shop">商城</Link>
+      </Menu.Item>
+      <Menu.Item className={isCart} key="cart">
+        <Link to="/cart">
+          购物车
+          <Badge count={count} offset={[5, -10]} />
+        </Link>
       </Menu.Item>
       {!isAuth() && (
         <>

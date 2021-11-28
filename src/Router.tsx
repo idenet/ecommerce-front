@@ -23,6 +23,7 @@ const Router = () => {
       <Route path="/admin/dashboard" element={<AdminRoutes />} />
       <Route path="/create/category" element={<AdminRoutes />} />
       <Route path="/create/product" element={<AdminRoutes />} />
+      <Route path="/admin/orders" element={<AdminRoutes />} />
       <Route path="/product/:productId" element={<Product />} />
     </Routes>
   )
