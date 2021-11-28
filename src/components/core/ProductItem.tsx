@@ -9,9 +9,34 @@ const { Title, Paragraph } = Typography
 
 interface Props {
   product: Product
+  showVieweProduct?: boolean
+  showCartButton?: boolean
 }
 
-const ProductItem: FC<Props> = ({ product }) => {
+const ProductItem: FC<Props> = ({
+  product,
+  showVieweProduct = true,
+  showCartButton = true,
+}) => {
+  const showButtons = () => {
+    let buttonArray = []
+    if (showVieweProduct) {
+      buttonArray.push(
+        <Button type="link">
+          <Link to={`/product/${product._id}`}>查看详情</Link>
+        </Button>
+      )
+    }
+    if (showCartButton) {
+      buttonArray.push(
+        <Button type="link">
+          <Link to="">加入购物车</Link>
+        </Button>
+      )
+    }
+    return buttonArray
+  }
+
   return (
     <Card
       hoverable
@@ -23,14 +48,7 @@ const ProductItem: FC<Props> = ({ product }) => {
           alt={product.name}
         />
       }
-      actions={[
-        <Button type="link">
-          <Link to="">查看详情</Link>
-        </Button>,
-        <Button type="link">
-          <Link to="">加入购物车</Link>
-        </Button>,
-      ]}
+      actions={showButtons()}
     >
       <Title level={5}>{product.name}</Title>
       <Paragraph ellipsis={{ rows: 2 }}>{product.description}</Paragraph>

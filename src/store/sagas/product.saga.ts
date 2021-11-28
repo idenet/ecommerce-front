@@ -5,8 +5,11 @@ import {
   FilterProductAction,
   FILTER_PRODUCT,
   GetProductAction,
+  GetProductByIdAction,
+  getProductByIdSuccess,
   getProductSuccess,
   GET_PRODUCT,
+  GET_PRODUCT_BY_ID,
   SearchProductAction,
   searchProductSuccess,
   SEARCH_PRODUCT,
@@ -45,8 +48,16 @@ function* handleFilterProduct(action: FilterProductAction) {
   yield put(filterProductSuccess(response.data, action.payload.skip))
 }
 
+function* handleGetProductById({ payload }: GetProductByIdAction) {
+  let response: { data: Product } = yield axios.get<Product>(
+    `${API}/product/${payload.productId}`
+  )
+  yield put(getProductByIdSuccess(response.data))
+}
+
 export default function* productSaga() {
   yield takeEvery(GET_PRODUCT, handleGetProduct)
   yield takeEvery(SEARCH_PRODUCT, handleSearchProduct)
   yield takeEvery(FILTER_PRODUCT, handleFilterProduct)
+  yield takeEvery(GET_PRODUCT_BY_ID, handleGetProductById)
 }
